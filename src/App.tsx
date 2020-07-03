@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './starwars.png';
+import { BrowserRouter as Router, Route, RouteComponentProps } from "react-router-dom";
 import './App.css';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
 
-function App() {
+import { Character } from './components/Character'
+import { Characters } from './components/AllCharacters'
+
+
+const client = new ApolloClient({
+  uri: '/graphql',
+});
+
+
+function LoadHomePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> Characters </h1>
+      <Characters />
     </div>
   );
 }
 
-export default App;
+
+type TParams = { id: string };
+
+function LoadCharacterPage({ match } : RouteComponentProps<TParams> ) {
+  const id = Number(match.params.id)
+  return <Character id={id} />
+}
+ 
+function AppRouter() {
+   return (
+     <Router>
+       <div className="center-div">
+        <img className="logo" src={logo} alt="Logo" />
+        <ApolloProvider client={client}>
+         <Route path="/" exact component={LoadHomePage} />
+         <Route path="/character/:id" component={LoadCharacterPage} />
+        </ApolloProvider>
+       </div>
+     </Router>
+   );
+ }
+
+export { AppRouter }
