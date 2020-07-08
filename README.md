@@ -4,6 +4,10 @@ Editable issue list.
 
 First run `npm install`.
 
+Note that the project uses mongodb as a database server. You will need to install and configure it correctly. The `dbname` the app uses is issuesdb.
+
+You can live preview the app on https://mighty-chamber-32704.herokuapp.com/.
+
 In the project directory, you can run:
 
 ### `npm run build`
