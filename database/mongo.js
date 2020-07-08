@@ -4,9 +4,12 @@ var MongoClient = mongo.MongoClient;
 var db;
 
 var DB_URL = "mongodb://127.0.0.1:27017/issuesdb"
+var dbname = "issuesdb"
+
 
 if (process.env.MONGODB_URI) {
   DB_URL = process.env.MONGODB_URI
+  dbname = "heroku_788k0hrv"
 }
 
 /**
@@ -20,8 +23,8 @@ exports.init = function(cb){
       if (err){
         cb(err,0);
       } else {
-        db = dbinstance.db("issuesdb");
-        cb(0,dbinstance.db("issuesdb"));
+        db = dbinstance.db(dbname);
+        cb(0,dbinstance.db(dbname));
       }
   });
 };
