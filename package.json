@@ -1,7 +1,7 @@
 {
-  "name": "nexum-fullstack",
+  "name": "preference-fullstack",
   "version": "0.0.1",
-  "description": "A Simple STAR WARS app",
+  "description": "A Simple Issue list app",
   "scripts": {
     "start": "node server.js",
     "build": "react-scripts build",
@@ -10,8 +10,6 @@
   },
   "proxy": "http://localhost:4000",
   "dependencies": {
-    "@apollo/react-components": "^3.1.5",
-    "@apollo/react-hooks": "^3.1.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^24.9.1",
@@ -19,10 +17,6 @@
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
-    "apollo-boost": "^0.4.9",
-    "apollo-datasource-rest": "^0.9.3",
-    "apollo-server": "^2.15.1",
-    "apollo-server-express": "^2.15.1",
     "graphql": "^15.2.0",
     "mongodb": "^3.5.9",
     "react": "^16.13.1",

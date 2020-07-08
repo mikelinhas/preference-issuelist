@@ -6,7 +6,7 @@ var db;
 var DB_URL = "mongodb://127.0.0.1:27017/issuesdb"
 
 if (process.env.MONGODB_URI) {
-  DB_URL = MONGODB_URI
+  DB_URL = process.env.MONGODB_URI
 }
 
 /**

@@ -1,6 +1,6 @@
-# Nexum Fullstack Project
+# Preference Fullstack Project
 
-Star Wars saga listing from [https://swapi.dev](http://swapi.dev). *swapi.co* is no longer available.
+Editable issue list.
 
 First run `npm install`.
 
