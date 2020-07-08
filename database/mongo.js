@@ -64,7 +64,7 @@ exports.updateStatus = function(collection, id, text, cb) {
 
 exports.insert = function(collection, data, cb) {
   db.collection(collection, function(err, collection) {
-    collection.insert(data, cb)
+    collection.insertOne(data, cb)
   })
 }
 

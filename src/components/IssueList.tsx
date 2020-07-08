@@ -62,9 +62,12 @@ function IssueList() {
           </tr>
         </thead>
         <tbody>
-          {issues.map((issue)=> {
-            return renderIssue(issue)
-          })}
+          { issues.length > 0
+            ? issues.map((issue)=> {
+                return renderIssue(issue)
+              })
+            : <div></div>
+          }
         </tbody>
       </table>
 
